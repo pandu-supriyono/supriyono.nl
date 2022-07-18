@@ -1,4 +1,4 @@
-const webpack = require("webpack");
+const dotenv = require("dotenv");
 const htmlmin = require("html-minifier");
 const emojiRegex = require("emoji-regex")();
 const Image = require("@11ty/eleventy-img");
@@ -10,6 +10,10 @@ const pluginToc = require("eleventy-plugin-toc");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const faviconPlugin = require("eleventy-favicon");
+const esbuild = require("esbuild");
+const { sassPlugin } = require("esbuild-sass-plugin");
+
+dotenv.config()
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -23,11 +27,7 @@ const mdOptions = {
 module.exports = (eleventyConfig) => {
   eleventyConfig.addWatchTarget("./src/**/*.scss");
   eleventyConfig.addWatchTarget("./src/**/*.ts");
-
-  const webpackConfig = isProd
-    ? require("./webpack.config.prod")
-    : require("./webpack.config.dev");
-  const webpackCompiler = webpack(webpackConfig);
+  eleventyConfig.addPassthroughCopy({ "./src/_assets/fonts/**/*": "assets/fonts" });
 
   if (isProd) {
     eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
@@ -59,17 +59,7 @@ module.exports = (eleventyConfig) => {
 
   nunjucksFilters(eleventyConfig);
 
-  eleventyConfig.on("eleventy.before", async () => {
-    webpackCompiler.run((err) => {
-      console.log("Compiling webpack...");
-      if (err) throw err;
-
-      webpackCompiler.close((closeErr) => {
-        if (closeErr) throw closeErr;
-        console.log("Closing webpack...");
-      });
-    });
-  });
+  eleventyConfig.on("eleventy.before", compileEsbuild);
 
   eleventyConfig.addTransform("emojis", (content, outputPath) => {
     return outputPath.endsWith(".html") ? wrapEmojis(content) : content;
@@ -122,17 +112,42 @@ async function imageShortcode(src, alt, sizes, options = {}) {
   const metadata = await Image(src, {
     widths: [300, 600, 800, null],
     formats: ["avif", "jpeg"],
-    outputDir: './dist/assets/images/',
-    urlPath: '/assets/images/'
-  })
+    outputDir: "./dist/assets/images/",
+    urlPath: "/assets/images/",
+  });
 
   let imageAttributes = {
     alt,
     sizes,
     loading: "lazy",
     decoding: "async",
-    ...options
+    ...options,
   };
 
-  return Image.generateHTML(metadata, imageAttributes, { whitespaceMode: 'inline' });
+  return Image.generateHTML(metadata, imageAttributes, {
+    whitespaceMode: "inline",
+  });
+}
+
+function compileEsbuild() {
+  return esbuild.build({
+    entryPoints: {
+      app: "./src/_assets/ts/index.ts",
+      main: "./src/_assets/scss/index.scss",
+    },
+    outdir: "./dist/assets",
+    minify: isProd,
+    sourcemap: !isProd,
+    bundle: true,
+    platform: "browser",
+    globalName: "App",
+    plugins: [
+      sassPlugin({
+        loadPaths: ["node_modules"],
+      }),
+    ],
+    define: Object.keys(process.env).reduce((acc, key) => {
+      return Object.assign(acc, { ['process.env.' + key]: JSON.stringify(process.env[key]) });
+    }, {})
+  });
 }
