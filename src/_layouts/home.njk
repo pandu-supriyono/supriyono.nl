@@ -10,7 +10,7 @@ layout: _base.njk
         <button class="hero__heading-interactive pill" aria-hidden="true" data-module="portrait-reveal-button">Say cheese! &#x1F4F8</button>
       </div>
       <div class="hero__image-reveal" data-module="portrait-reveal">
-        <img src="/assets/images/pandu-portrait.jpeg" alt="Pandu Supriyono posing with two fingers up, indicating a 'peace sign'">
+        {% image "./src/_assets/images/pandu-portrait.jpeg", "Pandu Supriyono posing with two fingers up, indicating a 'peace sign'", "(min-width: 30em) 50vw, 100vw" %}
       </div>
       <div class="hero__lead">
         {{ content | safe }}

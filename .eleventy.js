@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const htmlmin = require("html-minifier");
 const emojiRegex = require("emoji-regex")();
+const Image = require("@11ty/eleventy-img");
 const emojiShortName = require("emoji-short-name");
 const dateFns = require("date-fns");
 const markdownIt = require("markdown-it");
@@ -112,5 +113,26 @@ function nunjucksFilters(eleventyConfig) {
 
   eleventyConfig.addFilter("dump", (obj) => JSON.stringify(obj));
 
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+
   return eleventyConfig;
+}
+
+async function imageShortcode(src, alt, sizes, options = {}) {
+  const metadata = await Image(src, {
+    widths: [300, 600, 800, null],
+    formats: ["avif", "jpeg"],
+    outputDir: './dist/assets/images/',
+    urlPath: '/assets/images/'
+  })
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+    ...options
+  };
+
+  return Image.generateHTML(metadata, imageAttributes, { whitespaceMode: 'inline' });
 }

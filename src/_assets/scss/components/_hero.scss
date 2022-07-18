@@ -100,12 +100,14 @@
 }
 
 .hero__image-reveal {
-  width: 100%;
   overflow: hidden;
   margin-top: 1rem;
+  height: auto;
+  width: 100%;
 
   & img {
     width: 100%;
+    height: auto;
   }
 
   @include mq($from: tablet) {

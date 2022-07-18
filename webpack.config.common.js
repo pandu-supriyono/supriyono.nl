@@ -7,7 +7,7 @@ module.exports = {
   output: {
     library: 'App',
     path: path.resolve(__dirname, 'dist', 'assets'),
-    clean: true
+    clean: false
   },
   module: {
     rules: [
@@ -47,13 +47,6 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: 'fonts/[name][ext]'
-        }
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        type: 'asset',
-        generator: {
-          filename: 'images/[name][ext]'
         }
       }
     ]
