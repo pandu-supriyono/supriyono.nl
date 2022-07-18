@@ -1,30 +1,23 @@
 .sidebar {
   display: flex;
   flex-wrap: wrap;
-  column-gap: var(--sidebar-column-gap, 1rem);
-  row-gap: var(--sidebar-row-gap, 1rem);
-
-  & > *:first-child {
-    flex-basis: var(--sidebar-width, 20rem);
-    flex-grow: 1;
-  }
-
-  & > *:last-child {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-inline-size: var(--sidebar-content-min-width, 50%);
-  }
-
-  &[data-direction="rtl"] {
-    & > *:first-child {
-      flex-basis: 0;
-      flex-grow: 999;
-      min-inline-size: var(--sidebar-content-min-width, 50%);
-    }
-
-    & > *:last-child {
-      flex-basis: var(--sidebar-width, 20rem);
-      flex-grow: 1;
-    }
-  }
+  gap: var(--gutter, clamp(1.375rem, 1.2rem + 0.89vw, 2rem));
+}
+.sidebar:not([data-direction]) > :first-child {
+  flex-basis: var(--sidebar-target-width, 20rem);
+  flex-grow: 1;
+}
+.sidebar:not([data-direction]) > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: var(--sidebar-content-min-width, 50%);
+}
+.sidebar[data-direction="rtl"] > :last-child {
+  flex-basis: var(--sidebar-target-width, 20rem);
+  flex-grow: 1;
+}
+.sidebar[data-direction="rtl"] > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: var(--sidebar-content-min-width, 50%);
 }
