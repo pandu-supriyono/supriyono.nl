@@ -18,12 +18,7 @@ const mdOptions = {
   linkify: false,
   typographer: false,
 };
-const mdAnchorOpts = {
-  permalink: true,
-  permalinkClass: "anchor-link",
-  level: [1, 2, 3, 4],
-  visuallyHiddenClass: "sr-only",
-};
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addWatchTarget("./src/**/*.scss");
   eleventyConfig.addWatchTarget("./src/**/*.ts");
