@@ -1,4 +1,4 @@
 {
-  "layout": "single",
+  "layout": "post.njk",
   "permalink": "/blog/{{ page.date | date }}/{{ page.fileSlug }}/"
 }

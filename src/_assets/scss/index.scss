@@ -5,6 +5,8 @@
 @import "./components";
 @import "./prism";
 @import "./prose";
+@import "./compositions";
+@import "./pages";
 
 html {
   font-size: 100% * 1.25;
@@ -42,7 +44,65 @@ main {
   background-color: var(--background-color);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
 h1 {
   font-size: var(--font-size-xxl);
-  font-weight: 400;
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+}
+
+p,
+ul,
+ol {
+  font-size: var(--font-size-base);
+  line-height: 1.414;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul:not(.unstyled-list) li {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  &:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+figcaption {
+  max-inline-size: 45rem;
 }

@@ -58,6 +58,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPlugin(pluginToc, {
     tags: ["h2"],
+    ul: true
   });
 
   eleventyConfig.addPlugin(syntaxHighlight);

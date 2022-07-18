@@ -1,0 +1,33 @@
+.post {
+  --sidebar-content-min-width: 66.666%;
+}
+
+.post-header + * {
+  margin-top: 2rem;
+}
+
+.post-meta {
+  padding-bottom: 1rem;
+}
+
+*:not(.post-header) + .post-body {
+  margin-top: 4rem;
+}
+
+.post-meta__tags {
+  --column-gap: 0.5rem;
+  --row-gap: 0.5rem;
+}
+
+.post .toc li {
+  font-size: 1rem;
+}
+
+.post-sidebar {
+  position: relative;
+}
+
+.post-sidebar .post-toc {
+  position: sticky;
+  top: 2rem;
+}

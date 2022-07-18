@@ -94,3 +94,27 @@
     font-size: var(--font-size-base);
   }
 }
+
+.align-self\:flex-end {
+  align-self: flex-end;
+}
+
+.font-size\:sm {
+  font-size: var(--font-size-sm);
+}
+
+.font-size\:base {
+  font-size: var(--font-size-base);
+}
+
+.font-size\:mg {
+  font-size: var(--font-size-mg);
+}
+
+.font-size\:lg {
+  font-size: var(--font-size-lg);
+}
+
+.measure {
+  max-inline-size: var(--measure-width, 45rem);
+}

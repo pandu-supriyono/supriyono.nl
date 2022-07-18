@@ -1,0 +1,48 @@
+---
+layout: _full-width.njk
+---
+
+<main id="main" class="page post">
+  <header class="post-header sidebar">
+    <div class="post-meta | flow align-self:flex-end">
+      <div>
+        <div>Blog post</div>
+        <div class="post-meta__date">
+        Posted on {{ date | date('d MMMM yyyy') }}
+        </div>
+      </div>
+      <h2 class="sr-only">Tags</h2>
+      <ul class="post-meta__tags | unstyled-list | wrap">
+        {% for tag in tags %}
+          <li>
+            <a href="/blog/tags/{{ tag | slugify }}" class="pill | font-size:sm">{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h1>{{ title }}</h1>
+    </div>
+  </header>
+  <div class="sidebar">
+    <div></div>
+    <div>
+      {% if description %}
+        <p class="post-description font-size:lg">
+          {{ description }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="post-body | sidebar">
+    <aside class="post-sidebar">
+      <div class="post-toc | flow">
+        <h2 class="post-toc__heading | font-size:base">Contents</h2>
+        {{ content | toc | safe }}
+      </div>
+    </aside>
+    <div class="post__content | prose | flow">
+      {{ content | safe }}
+    </div>
+  </div>
+  <main>

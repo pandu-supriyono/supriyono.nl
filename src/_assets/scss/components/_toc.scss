@@ -1,18 +1,5 @@
-.toc {
-  position: sticky;
-  top: 2rem;
-}
-
-.toc__heading {
-  font-weight: 400;
-  font-size: var(--font-size-base);
-  margin-top: 1rem;
-}
-
-.toc ol {
-  margin: 0;
-  list-style: none;
-  padding-left: 0;
+.toc ul > * + * {
+  margin-top: 0.25rem;
 }
 
 .toc a {
@@ -20,20 +7,5 @@
 
   &:hover {
     text-decoration: underline;
-  }
-}
-
-.toc li {
-  position: relative;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 0.5rem;
-
-  &:before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    width: 18px;
-    overflow: hidden;
   }
 }
