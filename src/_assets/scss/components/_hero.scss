@@ -26,6 +26,7 @@
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1;
+  max-inline-size: none;
 
   @include mq($from: tablet) {
     line-height: 0.8;
