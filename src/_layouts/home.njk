@@ -27,18 +27,6 @@ layout: _base.njk
 
 <footer class="footer | bottom font-size-small">
   <div class="footer__container | container container--full-width | switcher flow" data-switcher="centered">
-    <div data-module="utrecht-time">Utrecht, NL</div>
-    <ul class="footer__meta | unstyled-list | flow-x">
-      <li class="footer__meta-item">
-        <a href="/privacy">Privacy</a>
-      </li>
-      <li class="footer__meta-item">
-        <a href="/accessibility">Accessibility</a>
-      </li>
-      <li class="footer__meta-item">
-        <a href="/feed.xml">RSS</a>
-      </li>
-    </ul>
-    <div data-module="now-playing"></div>
+    {% include "footer-widgets.njk" %}
   </div>
 </footer>
