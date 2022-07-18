@@ -8,6 +8,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginToc = require("eleventy-plugin-toc");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const faviconPlugin = require("eleventy-favicon");
 
 const isProd = process.NODE_ENV === "production";
 
@@ -47,6 +48,10 @@ module.exports = (eleventyConfig) => {
   }
 
   eleventyConfig.setLibrary("md", markdownIt(mdOptions).use(markdownItAnchor));
+
+  eleventyConfig.addPlugin(faviconPlugin, {
+    destination: "./dist"
+  });
 
   eleventyConfig.addPlugin(pluginRss);
 
