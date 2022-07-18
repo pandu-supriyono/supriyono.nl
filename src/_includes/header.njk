@@ -1,0 +1,20 @@
+<header class="header | container container--full-width switcher" data-switcher="centered">
+  <div class="header__home">
+    <a class="header__home-link" href="/" aria-label="Go to homepage">
+      <svg class="header__circle" fill="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50"/>
+      </svg>
+      <span>Pandu Supriyono</span>
+    </a>
+  </div>
+  <nav class="header__nav">
+    <ul class="header__menu | unstyled-list | flow-x">
+      <li class="header__menu-item">
+        <a href="/blog" {% if page.url === "/blog/" %}aria-current="page"{% endif %}>Blog</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="header__options">
+    <button class="header__options-button" data-module="dark-mode-toggle-button">Dark mode</button>
+  </div>
+</header>

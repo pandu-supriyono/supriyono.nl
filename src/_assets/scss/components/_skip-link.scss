@@ -1,0 +1,24 @@
+.skip-link {
+  background-color: var(--focus-color);
+  color: #fff;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  position: absolute;
+  transform: translateY(-100%);
+  left: 0;
+  transition: transform .75s ease;
+  z-index: 100;
+  padding: 0.5rem 0;
+
+  &:focus {
+    transform: translateY(0%);
+    outline: none;
+  }
+}

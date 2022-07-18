@@ -1,0 +1,14 @@
+.pill {
+  padding: 0.25rem 0.50rem;
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--background-color);
+  border: 2px solid var(--text-color);
+  display: inline-block;
+
+  &:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+  }
+}

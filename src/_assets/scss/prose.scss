@@ -1,0 +1,107 @@
+.post {
+  margin-top: 2rem;
+
+  @include mq($from: desktop) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 3fr;
+    margin-top: 4rem;
+  }
+}
+
+.post__meta {
+  align-self: center;
+  @include mq($from: desktop) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+
+.post__tags {
+  --column-gap: 0.5rem;
+  --row-gap: 0.5rem;
+}
+
+.post__heading {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: var(--font-size-xxl);
+  @include mq($from: desktop) {
+    grid-row: 1;
+    grid-column: 2;
+  }
+}
+
+.post__content {
+  padding-bottom: 4rem;
+  @include mq($from: desktop) {
+    grid-column: 2;
+  }
+
+  * {
+    font-size: var(--font-size-base);
+    line-height: 1.414;
+  }
+
+  & *:first-child {
+    margin-top: 0;
+  }
+
+  h2, h3 {
+    font-weight: 400;
+    font-size: var(--font-size-md);
+  }
+
+  * + h2 {
+    margin-top: 2rem;
+  }
+
+  * + h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  * + p {
+    margin-top: 0;
+  }
+}
+
+.post__aside {
+  position: relative;
+}
+
+.post__description {
+  font-size: var(--font-size-lg);
+  @include mq($from: desktop) {
+    grid-column: 2;
+  }
+}
+
+.post__meta + * {
+  margin-top: 2rem;
+}
+
+.post__meta-date {
+  margin-top: 0;
+}
+
+.prose {
+  max-width: 75ch;
+  padding-bottom: 2rem;
+
+  @include mq($from: desktop) {
+    padding-bottom: 4rem;
+  }
+
+  p, ul {
+    line-height: 1.25;
+    font-size: var(--font-size-base);
+  }
+
+  &.prose--lead {
+    p:first-of-type {
+      line-height: 1.1;
+      font-size: var(--font-size-lg);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+---
+layout: _base.njk
+---
+
+<main id="main">
+  <div class="hero | container">
+    <div class="hero__body">
+      <div class="hero__heading-container">
+        <h1 class="hero__heading">Pandu Supriyono</h1>
+        <button class="hero__heading-interactive pill" aria-hidden="true" data-module="portrait-reveal-button">Say cheese! &#x1F4F8</button>
+      </div>
+      <div class="hero__image-reveal" data-module="portrait-reveal">
+        <img src="/assets/images/pandu-portrait.jpeg" alt="Pandu Supriyono posing with two fingers up, indicating a 'peace sign'">
+      </div>
+      <div class="hero__lead">
+        {{ content | safe }}
+      </div>
+    </div>
+    <h2 class="sr-only">Contact me</h2>
+    <div class="hero__contact | flow">
+      {% for social in site.contact %}
+        <a href="{{ social.href }}" class="hero__contact-link pill">{{ social.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+<footer class="footer | bottom font-size-small">
+  <div class="footer__container | container container--full-width | switcher flow" data-switcher="centered">
+    <div data-module="utrecht-time">Utrecht, NL</div>
+    <ul class="footer__meta | unstyled-list | flow-x">
+      <li class="footer__meta-item">
+        <a href="/privacy">Privacy</a>
+      </li>
+      <li class="footer__meta-item">
+        <a href="/accessibility">Accessibility</a>
+      </li>
+      <li class="footer__meta-item">
+        <a href="/feed.xml">RSS</a>
+      </li>
+    </ul>
+    <div data-module="now-playing"></div>
+  </div>
+</footer>

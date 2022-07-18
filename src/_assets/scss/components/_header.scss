@@ -1,0 +1,54 @@
+.header {
+  padding-top: 1rem;
+  z-index: 1;
+  position: relative;
+  padding-bottom: 0.5rem;
+
+  & > * {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.header a {
+  text-decoration: none;
+  height: fit-content;
+}
+
+.header__home-link {
+  position: relative;
+  padding-left: 30px;
+
+  &:hover .header__circle {
+    transform: translateY(-50%) scale(120%);
+  }
+}
+
+.header__circle {
+  width: 20px;
+  margin-right: 1ch;
+  display: block;
+  transition: transform 0.3s cubic-bezier(.22,.68,0,1.71);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header__menu {
+}
+
+.header__menu-item {
+  display: inline-block;
+}
+
+.header__options {
+}
+
+.header__options-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  @extend a;
+}

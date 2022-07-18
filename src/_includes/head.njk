@@ -1,0 +1,30 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dd7eb4">
+  <meta name="generator" content="{{ eleventy.generator }}">
+  <title>{{ title | default(site.name)}}</title>
+  <link rel="canonical" href="{{ site.url + page.url }}">
+  <meta name="description" content="{{ description | default(site.description) }}">
+  {% if keywords %} <meta name="keywords" content="{{ keywords | join(',') }}" />{% endif %}
+  <style>
+    @font-face {
+      font-family: "PP Neue Montreal";
+      font-weight: 400;
+      src: url("/assets/fonts/PPNeueMontreal-Regular.ttf") format("ttf"),
+        url("/assets/fonts/PPNeueMontreal-Regular.otf") format("otf"),
+        url("/assets/fonts/PPNeueMontreal-Regular.woff") format("woff"),
+        url("/assets/fonts/PPNeueMontreal-Regular.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-family: "PP Neue Montreal";
+      font-weight: 700;
+      src: url("/assets/fonts/PPNeueMontreal-Bold.ttf") format("ttf"),
+        url("/assets/fonts/PPNeueMontreal-Bold.otf") format("otf"),
+        url("/assets/fonts/PPNeueMontreal-Bold.woff") format("woff"),
+        url("/assets/fonts/PPNeueMontreal-Bold.woff2") format("woff2");
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/main.css"/>
+</head>

@@ -1,0 +1,21 @@
+$font-family-body: "PP Neue Montreal", sans-serif;
+
+:root {
+  --text-color: #1c1c1c;
+  --background-color: #fff;
+  --border-color: var(--text-color);
+  --focus-color: #B53CDE;
+  --font-size-sm: clamp(0.8rem, 0.07vw + 0.78rem, 0.84rem);
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-md: clamp(1.25rem, 0.78vw + 1.05rem, 1.68rem);
+  --font-size-lg: clamp(1.56rem, 1.48vw + 1.19rem, 2.37rem);
+  --font-size-xl: clamp(1.95rem, 2.55vw + 1.31rem, 3.36rem);
+  --font-size-xxl: clamp(2.44rem, 4.19vw + 1.39rem, 4.75rem);
+  --font-size-xxxl: clamp(3.05rem, 6.66vw + 1.39rem, 6.71rem);
+}
+
+.body--dark {
+  --text-color: #fff;
+  --background-color: #1c1c1c;
+  --border-color: #9b9b9b;
+}

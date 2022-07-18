@@ -1,0 +1,4 @@
+{
+  "layout": "single",
+  "permalink": "/blog/{{ page.date | date }}/{{ page.fileSlug }}/"
+}
