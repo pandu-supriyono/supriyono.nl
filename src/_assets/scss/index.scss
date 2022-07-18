@@ -102,7 +102,9 @@ h4,
 h5,
 h6,
 p,
+ul,
+ol,
 li,
 figcaption {
-  max-inline-size: 45rem;
+  max-inline-size: var(--max-inline-size, 45rem);
 }

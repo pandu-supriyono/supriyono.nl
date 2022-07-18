@@ -1,0 +1,31 @@
+.posts .sidebar {
+  --sidebar-target-width: 40rem;
+  --sidebar-content-min-width: 40%;
+}
+
+.posts-content {
+  --max-inline-size: 40ch;
+}
+
+.posts-tag-list {
+  --column-gap: 0.5rem;
+  --row-gap: 0.5rem;
+
+  margin-bottom: 4rem;
+}
+
+.post-post-list__item {
+  --flow-y-space: 3rem;
+
+  & > * {
+    --flow-y-space: 0.5rem;
+  }
+}
+
+.post-post-list__item-heading {
+  margin-bottom: -0.25rem;
+}
+
+.post-post-list__item-description {
+  --flow-y-space: 1.25rem;
+}

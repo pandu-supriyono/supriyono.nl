@@ -1,0 +1,47 @@
+---
+layout: _full-width.njk
+---
+
+<div class="page posts">
+  <div class="sidebar" data-direction="rtl">
+    <div class="flow">
+      <div class="posts-content | prose flow">
+        <h1>{{ title }}</h1>
+        {{ content | safe }}
+      </div>
+      <div class="posts-content | flow">
+        <h2 class="font-size:base">Read posts about:</h2>
+        <ul class="posts-tag-list unstyled-list | wrap">
+          {% for tag in collections.tagList %}
+            <li>
+              <a class="pill | font-size:sm" href="/blog/tags/{{ tag | slugify }}">{{ tag }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div>
+      <ul class="posts-post-list | unstyled-list | flow">
+        {% for post in collections[tag | default("posts")] %}
+          <li class="post-post-list__item | flow">
+            <a href="{{ post.url }}">
+              <h2 class="post-post-list__item-heading">
+                {{post.data.title}}
+              </h2>
+            </a>
+            <div class="font-size:sm">Posted on {{ post.date | date('d MMMM yyyy') }}</div>
+            <div class="wrap">
+              {% for tag in post.data.tags %}
+                <a class="pill | font-size:sm" href="/blog/tags/{{ tag | slugify }}">{{tag}}</a>
+              {% endfor %}
+            </div>
+            <p class="post-post-list__item-description">
+              {{ post.data.description }}
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+</div>

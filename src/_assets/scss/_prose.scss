@@ -1,6 +1,10 @@
 .prose {
   --flow-y-space: 1.5rem;
 
+  h1 + * {
+    --flow-y-space: 2.5rem;
+  }
+
   h2, h3 {
     font-size: var(--font-size-md);
   }

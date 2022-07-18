@@ -1,5 +1,5 @@
 ---
-layout: blog-list.njk
+layout: posts.njk
 pagination:
   data: collections
   size: 1
@@ -14,5 +14,3 @@ tag: tag
 eleventyComputed:
   title: Posts about {{ tag }}
 ---
-
-[Return to all blog posts](/blog)

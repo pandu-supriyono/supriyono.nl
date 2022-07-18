@@ -77,6 +77,16 @@ module.exports = (eleventyConfig) => {
       .sort((a, b) => b.date - a.date);
   });
 
+  eleventyConfig.addCollection("tagList", (collectionApi) => {
+    const tags = collectionApi.getAll()
+      .filter((item) => !!item.data.tags && Array.isArray(item.data.tags) && item.data.tags.length > 0)
+      .map((item) => item.data.tags).flat()
+      .filter((item, index, array) => array.indexOf(item) === index)
+      .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+    return tags
+  });
+
   return {
     markdownTemplateEngine: "njk",
     dir: {

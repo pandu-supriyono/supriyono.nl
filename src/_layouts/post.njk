@@ -2,7 +2,7 @@
 layout: _full-width.njk
 ---
 
-<main id="main" class="page post">
+<div class="page post">
   <header class="post-header sidebar">
     <div class="post-meta | flow align-self:flex-end">
       <div>
@@ -27,11 +27,9 @@ layout: _full-width.njk
   <div class="sidebar">
     <div></div>
     <div>
-      {% if description %}
-        <p class="post-description font-size:lg">
-          {{ description }}
-        </p>
-      {% endif %}
+      <p class="post-description font-size:lg">
+        {{ description }}
+      </p>
     </div>
   </div>
   <div class="post-body | sidebar">
@@ -45,4 +43,4 @@ layout: _full-width.njk
       {{ content | safe }}
     </div>
   </div>
-  <main>
+<div>
