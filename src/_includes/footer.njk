@@ -1,12 +1,12 @@
 <footer class="footer | invert-colours bottom">
   <div class="footer__container container container--full-width | flow">
-    <div class="footer__content">
+    <div class="footer__content | flow">
       <h2 class="footer__heading">&copy; Pandu Supriyono</h2>
-      <p>
+      <p class="font-size:inherit">
         Utrecht-based web developer focusing on building inclusive and
         resillient web applications. 
       </p>
-      <ul class="footer__contact-list | unstyled-list | flow-x">
+      <ul class="footer__contact-list | unstyled-list | font-size:inherit flow-x">
         {% for social in site.contact %}
           <li class="footer__contact-item">
             <a href="{{ social.href }}" class="footer__contact-link footer__link">{{ social.name }}</a>

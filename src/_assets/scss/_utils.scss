@@ -115,6 +115,10 @@
   font-size: var(--font-size-lg);
 }
 
+.font-size\:inherit {
+  font-size: inherit;
+}
+
 .measure {
   max-inline-size: var(--measure-width, 45rem);
 }
