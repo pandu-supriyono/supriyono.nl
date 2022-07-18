@@ -1,4 +1,3 @@
-const Fiber = require('fibers')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Dotenv = require('dotenv-webpack')
 
@@ -34,7 +33,6 @@ module.exports = {
             options: {
               implementation: require('sass'),
               sassOptions: {
-                fiber: Fiber,
                 outputStyle: 'expanded'
               }
             }

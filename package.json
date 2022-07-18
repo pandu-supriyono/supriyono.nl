@@ -23,7 +23,6 @@
     "eleventy-plugin-toc": "^1.1.5",
     "emoji-regex": "^10.1.0",
     "emoji-short-name": "^2.0.0",
-    "fibers": "^5.0.1",
     "gsap": "^3.10.4",
     "html-minifier": "^4.0.0",
     "imagemin": "^8.0.1",
