@@ -8,36 +8,4 @@ layout: _base.njk
   </div>
 </main>
 
-<footer class="footer | invert-colours bottom">
-  <div class="footer__container container container--full-width | flow">
-    <div class="footer__content">
-      <h2 class="footer__heading">&copy; Pandu Supriyono</h2>
-      <p>
-        Utrecht-based web developer focusing on building inclusive and
-        resillient web applications. 
-      </p>
-      <ul class="footer__contact-list | unstyled-list | flow-x">
-        {% for social in site.contact %}
-          <li class="footer__contact-item">
-            <a href="{{ social.href }}" class="footer__contact-link footer__link">{{ social.name }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="footer__widgets | flow switcher bottom font-size-small" data-switcher="centered">
-      <div data-module="utrecht-time">Utrecht, NL</div>
-        <ul class="footer__meta | unstyled-list | flow-x">
-          <li class="footer__meta-item">
-            <a href="/privacy" class="footer__menu-link footer__link">Privacy</a>
-          </li>
-          <li class="footer__meta-item">
-            <a href="/accessibility" class="footer__menu-link footer__link">Accessibility</a>
-          </li>
-          <li class="footer__meta-item">
-            <a href="/feed.xml">RSS</a>
-          </li>
-        </ul>
-      <div data-module="now-playing"></div>
-    </div>
-  </div>
-</footer>
+{% include "footer.njk" %}
