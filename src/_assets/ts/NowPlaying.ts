@@ -34,7 +34,7 @@ export default class NowPlaying {
   }
 
   private async fetchData () {
-    const apiPath = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${this.options.user}&api_key=${this.options.apiKey}&format=json`
+    const apiPath = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${this.options.user}&api_key=${this.options.apiKey}&format=json`
     try {
       const response = await fetch(apiPath)
       if (response.ok) {
