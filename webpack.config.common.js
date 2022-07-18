@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/_assets/ts/index.ts',
   output: {
     library: 'App',
-    path: path.resolve(__dirname, 'dist/assets'),
+    path: path.resolve(__dirname, 'dist', 'assets'),
     clean: true
   },
   module: {

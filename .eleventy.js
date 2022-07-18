@@ -10,7 +10,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const faviconPlugin = require("eleventy-favicon");
 
-const isProd = process.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === "production";
 
 const mdOptions = {
   html: true,
@@ -38,14 +38,14 @@ module.exports = (eleventyConfig) => {
         });
         return minified;
       }
-      return content
-    })
+      return content;
+    });
   }
 
   eleventyConfig.setLibrary("md", markdownIt(mdOptions).use(markdownItAnchor));
 
   eleventyConfig.addPlugin(faviconPlugin, {
-    destination: "./dist"
+    destination: "./dist",
   });
 
   eleventyConfig.addPlugin(pluginRss);
@@ -58,13 +58,14 @@ module.exports = (eleventyConfig) => {
 
   nunjucksFilters(eleventyConfig);
 
-  eleventyConfig.on("eleventy.before", () => {
+  eleventyConfig.on("eleventy.before", async () => {
     webpackCompiler.run((err) => {
       console.log("Compiling webpack...");
       if (err) throw err;
 
       webpackCompiler.close((closeErr) => {
         if (closeErr) throw closeErr;
+        console.log("Closing webpack...");
       });
     });
   });

@@ -5,9 +5,7 @@ const common = require('./webpack.config.common.js'); module.exports = merge(com
   mode: 'production',
   optimization: {
     minimizer: [
-      new CssMinimizerPlugin({
-        minify: true
-      }),
+      new CssMinimizerPlugin(),
       new TerserPlugin({
         extractComments: false,
         minify: TerserPlugin.uglifyJsMinify
