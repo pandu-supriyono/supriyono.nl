@@ -12,4 +12,15 @@
   * + h2 {
     --flow-y-space: 2.5rem;
   }
+
+  &.prose--lead {
+    h1 + p {
+      font-size: var(--font-size-lg);
+      line-height: 1.414;
+    }
+
+    h1 + p + * {
+      --flow-y-space: 2.5rem;
+    }
+  }
 }
