@@ -11,6 +11,10 @@
   margin-top: auto;
 }
 
+.right {
+  margin-left: auto;
+}
+
 .unstyled-list {
   margin: 0;
   padding: 0;
@@ -71,6 +75,29 @@
   font-size: var(--font-size-lg);
 }
 
+.font-size\:xl {
+  font-size: var(--font-size-xl);
+}
+
+
+.font-size\:xxl {
+  font-size: var(--font-size-xxl);
+}
+
+.font-size\:xxxl {
+  font-size: var(--font-size-xxxl);
+}
+
 .font-size\:inherit {
   font-size: inherit;
+}
+
+.text-decoration\:none {
+  text-decoration: none;
+}
+
+.splitter-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
