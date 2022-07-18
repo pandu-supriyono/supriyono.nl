@@ -1,11 +1,9 @@
 @import "normalize.css/normalize";
-@import "~sass-mq/mq";
+@import "sass-mq/mq";
 @import "./settings";
+@import "./compositions";
 @import "./utils";
 @import "./components";
-@import "./prism";
-@import "./prose";
-@import "./compositions";
 @import "./pages";
 
 html {

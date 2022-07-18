@@ -1,0 +1,18 @@
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc((30rem - 100%) * 999);
+  }
+
+  & > *[data-switcher-position="center"] {
+    text-align: center;
+  }
+
+  & > *[data-switcher-position="right"] {
+    text-align: right;
+  }
+}

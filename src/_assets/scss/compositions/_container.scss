@@ -1,0 +1,8 @@
+.container {
+  width: var(--container-width, min(100% - 4rem, 1600px));
+  margin-inline: auto;
+}
+
+.container--full-width {
+  --container-width: min(100% - 4rem);
+}
