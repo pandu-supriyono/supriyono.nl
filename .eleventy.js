@@ -12,8 +12,11 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const faviconPlugin = require("eleventy-favicon");
 const esbuild = require("esbuild");
 const { sassPlugin } = require("esbuild-sass-plugin");
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
+const postcssPresetEnv = require("postcss-preset-env");
 
-dotenv.config()
+dotenv.config();
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -27,7 +30,9 @@ const mdOptions = {
 module.exports = (eleventyConfig) => {
   eleventyConfig.addWatchTarget("./src/**/*.scss");
   eleventyConfig.addWatchTarget("./src/**/*.ts");
-  eleventyConfig.addPassthroughCopy({ "./src/_assets/fonts/**/*": "assets/fonts" });
+  eleventyConfig.addPassthroughCopy({
+    "./src/_assets/fonts/**/*": "assets/fonts",
+  });
 
   if (isProd) {
     eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
@@ -141,13 +146,23 @@ function compileEsbuild() {
     bundle: true,
     platform: "browser",
     globalName: "App",
+    target: "es2016",
     plugins: [
       sassPlugin({
         loadPaths: ["node_modules"],
+        transform: async (source) => {
+          const { css } = await postcss([
+            autoprefixer,
+            postcssPresetEnv({ stage: 0 }),
+          ]).process(source, { from: undefined });
+          return css;
+        },
       }),
     ],
     define: Object.keys(process.env).reduce((acc, key) => {
-      return Object.assign(acc, { ['process.env.' + key]: JSON.stringify(process.env[key]) });
-    }, {})
+      return Object.assign(acc, {
+        ["process.env." + key]: JSON.stringify(process.env[key]),
+      });
+    }, {}),
   });
 }
