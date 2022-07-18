@@ -4,8 +4,8 @@ export interface NowPlayingSettings {
 }
 
 export default class NowPlaying {
-  constructor (private element: HTMLElement, private options: NowPlayingSettings) {
-    if (!element || !options) return
+  constructor (private element: HTMLElement) {
+    if (!element) return
 
     this.initialize()
   }
@@ -34,15 +34,13 @@ export default class NowPlaying {
   }
 
   private async fetchData () {
-    const apiPath = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${this.options.user}&api_key=${this.options.apiKey}&format=json`
+    const apiPath = '/.netlify/functions/now-playing'
     try {
       const response = await fetch(apiPath)
       if (response.ok) {
         const payload = await response.json()
 
-        if (payload.recenttracks && payload.recenttracks.track) {
-          return payload.recenttracks.track[0] as { name: string; url: string; artist: { '#text': string } }
-        }
+        return payload as { name: string; url: string; artist: { '#text': string } }
       }
     } catch (err) {
       return null

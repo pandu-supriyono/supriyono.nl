@@ -14,10 +14,7 @@ export function init () {
     document.querySelector('[data-module="portrait-reveal-button"]'),
     document.querySelector('[data-module="portrait-reveal"]')
   )
-  new NowPlaying(document.querySelector('[data-module="now-playing"]'), {
-    apiKey: process.env.LAST_FM_API_KEY,
-    user: process.env.LAST_FM_USER
-  })
+  new NowPlaying(document.querySelector('[data-module="now-playing"]'))
   new VisitorCount(document.querySelector('[data-module="visitor-count"]'), {
     namespace: process.env.VISITOR_COUNT_NAMESPACE,
     key: process.env.VISITOR_COUNT_KEY
