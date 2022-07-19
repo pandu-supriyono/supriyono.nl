@@ -1,6 +1,7 @@
 .contact h1 {
   max-inline-size: none;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 
   @include mq($from: tablet) {
     margin-top: 4rem;
@@ -8,7 +9,6 @@
 }
 
 .contact {
-  --flow-y-space: 4rem;
 
   flex-grow: 1;
 }
@@ -18,5 +18,6 @@
 }
 
 .contact-options {
+
   align-items: flex-end;
 }
