@@ -19,7 +19,7 @@ layout: _base.njk
     <h2 class="sr-only">Contact me</h2>
     <div class="hero__contact | flow">
       {% for social in site.contact %}
-        <a href="{{ social.href }}" class="hero__contact-link pill">{{ social.name }}</a>
+        <a href="{{ social.href }}" rel="me" class="hero__contact-link pill">{{ social.name }}</a>
       {% endfor %}
     </div>
   </div>

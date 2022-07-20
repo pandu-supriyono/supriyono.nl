@@ -9,7 +9,7 @@
       <ul class="footer__contact-list | unstyled-list | font-size:inherit flow-x">
         {% for social in site.contact %}
           <li class="footer__contact-item">
-            <a href="{{ social.href }}" class="footer__contact-link footer__link">{{ social.name }}</a>
+            <a href="{{ social.href }}" rel="me" class="footer__contact-link footer__link">{{ social.name }}</a>
           </li>
         {% endfor %}
       </ul>
