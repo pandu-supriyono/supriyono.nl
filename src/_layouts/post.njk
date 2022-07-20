@@ -17,7 +17,7 @@ layout: _full-width.njk
       <ul class="post-meta__tags | unstyled-list | wrap">
         {% for tag in tags %}
           <li>
-            <a href="/blog/tags/{{ tag | slugify }}" class="pill | font-size:sm">{{ tag }}</a>
+            <a rel="tag" href="/blog/tags/{{ tag | slugify }}" class="pill | font-size:sm">{{ tag }}</a>
           </li>
         {% endfor %}
       </ul>
