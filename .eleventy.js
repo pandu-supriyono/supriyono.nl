@@ -33,6 +33,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({
     "./src/_assets/fonts/**/*": "assets/fonts",
   });
+  eleventyConfig.addPassthroughCopy({
+    "./src/_assets/images/to-copy": "assets/images",
+  });
 
   if (isProd) {
     eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
