@@ -2,14 +2,15 @@
 layout: _full-width.njk
 ---
 
-<article class="page post">
+<article class="page post h-entry">
   <header class="post-header sidebar">
     <div class="post-meta | flow align-self:flex-end">
       <div>
         <div>Blog post</div>
-        <div class="post-meta__date">
+        <time class="post-meta__date dt-published" datetime="{{ date }}">
         Posted on {{ date | date('d MMMM yyyy') }}
-        </div>
+        </time>
+        <div class="p-author | hidden">{{ author }}</div>
       </div>
       <h2 class="sr-only">Tags</h2>
       <ul class="post-meta__tags | unstyled-list | wrap">
@@ -21,13 +22,13 @@ layout: _full-width.njk
       </ul>
     </div>
     <div>
-      <h1>{{ title }}</h1>
+      <h1 class="p-name">{{ title }}</h1>
     </div>
   </header>
   <div class="sidebar">
     <div></div>
     <div>
-      <p class="post-description font-size:lg">
+      <p class="post-description p-summary | font-size:lg">
         {{ description }}
       </p>
     </div>
@@ -39,7 +40,7 @@ layout: _full-width.njk
         {{ content | toc | safe }}
       </div>
     </aside>
-    <div class="post__content | prose | flow">
+    <div class="post__content e-content | prose | flow">
       {{ content | safe }}
     </div>
   </div>
