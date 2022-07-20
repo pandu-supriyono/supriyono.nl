@@ -11,6 +11,7 @@ layout: _full-width.njk
         Posted on {{ date | date('d MMMM yyyy') }}
         </time>
         <div class="p-author | hidden">{{ author }}</div>
+        <div class="u-url | hidden">{{ site.url + page.url }}</div>
       </div>
       <h2 class="sr-only">Tags</h2>
       <ul class="post-meta__tags | unstyled-list | wrap">
