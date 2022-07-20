@@ -10,11 +10,7 @@ layout: _full-width.njk
         <time class="post-meta__date dt-published" datetime="{{ date | dateToIso8601 }}">
         Posted on {{ date | date('d MMMM yyyy') }}
         </time>
-        <div class="h-card | hidden">
-          <a class="p-author" rel="author" href="{{ authorUrl }}">{{ author }}</a>
-          <a href="mailto:mail@supriyono.nl" class="u-email">mail@supriyono.nl</a>
-          <img class="u-photo" src="/assets/images/pandu-portrait.jpeg" alt="Pandu Supriyono smiling at the camera">
-        </div>
+        {% include "h-card.njk" %}
         <div class="u-url | hidden">{{ site.url + page.url }}</div>
       </div>
       <h2 class="sr-only">Tags</h2>
