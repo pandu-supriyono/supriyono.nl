@@ -120,6 +120,10 @@ function nunjucksFilters(eleventyConfig) {
 
   eleventyConfig.addFilter("dateToRfc3339", pluginRss.dateToRfc3339);
 
+  eleventyConfig.addFilter("dateToIso8601", (date) => {
+    return dateFns.formatISO(date).toString();
+  })
+
   eleventyConfig.addFilter("dump", (obj) => JSON.stringify(obj));
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
