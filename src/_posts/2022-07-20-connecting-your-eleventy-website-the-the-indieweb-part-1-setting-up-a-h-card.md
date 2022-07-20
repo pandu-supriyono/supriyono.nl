@@ -126,7 +126,7 @@ Then somewhere in my template where I want to show my online profiles:
 ```liquid
 {{ '{% for social in site.profiles %}
   <a href="{{ social.href }}" rel="me">{{ social.name }}</a>
-{% endfor %}' }}
+{% endfor %}' | safe }}
 ```
 
 Now you tell parsers that the link will lead the user to a destination that represents a profile of the same person -- you!
