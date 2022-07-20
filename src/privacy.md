@@ -16,8 +16,4 @@ and California Consumer Privacy Act (CCPA). According to [their policy](https://
 they save access logs in their servers for 30 days, which contains your IP address. To exercise your 
 privacy rights, you can contact Netlify. You can also contact me and we can see if we can arrange a solution together.
 
-As a nod to the Myspace era of the web, I have a "Now playing" widget which tells you what song I'm currently listening to
-on Spotify. I use a service provided by [Last.fm](https://www.last.fm/) so that your browser gets this data. It may or may not
-log your IP address in doing so.
-
 If you would like to take a look at the source code for this website, you can do so on [this website's GitHub repository](https://github.com/pandu-supriyono/supriyono.nl). I invite you to make suggestions with regards to safeguarding user privacy (as well as other things that you may want to see).
