@@ -7,7 +7,7 @@ layout: _full-width.njk
     <div class="post-meta | flow align-self:flex-end">
       <div>
         <div>Blog post</div>
-        <time class="post-meta__date dt-published" datetime="{{ date }}">
+        <time class="post-meta__date dt-published" datetime="{{ date | dateToIso8601 }}">
         Posted on {{ date | date('d MMMM yyyy') }}
         </time>
         <div class="h-card | hidden">
