@@ -23,4 +23,11 @@
       --flow-y-space: 2.5rem;
     }
   }
+
+  blockquote {
+    border-left: 6px solid var(--border-color);
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
