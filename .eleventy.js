@@ -68,7 +68,7 @@ module.exports = (eleventyConfig) => {
 
   nunjucksFilters(eleventyConfig);
 
-  eleventyConfig.on("eleventy.before", compileEsbuild);
+  eleventyConfig.on("eleventy.before", compileEsBuild);
 
   eleventyConfig.addTransform("emojis", (content, outputPath) => {
     return outputPath.endsWith(".html") ? wrapEmojis(content) : content;
@@ -152,7 +152,7 @@ async function imageShortcode(src, alt, sizes, options = {}) {
   });
 }
 
-function compileEsbuild() {
+function compileEsBuild() {
   return esbuild.build({
     entryPoints: {
       app: "./src/_assets/ts/index.ts",
