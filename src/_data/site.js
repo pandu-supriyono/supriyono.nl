@@ -1,9 +1,7 @@
 module.exports = () => {
-  const isProd = process.env.NODE_ENV === 'production'
-
   return {
     name: 'supriyono.nl',
-    url: isProd ? 'https://supriyono.nl' : 'http://localhost:8080',
+    url: process.env.URL,
     description: 'I am Pandu Supriyono, an Utrecht-based web developer focusing on building inclusive and resillient web applications. ',
     author: 'Pandu Supriyono',
     email: 'mail@supriyono.nl',

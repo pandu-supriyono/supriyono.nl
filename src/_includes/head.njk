@@ -8,6 +8,15 @@
   <meta name="description" content="{{ description | default(site.description) }}">
   {% favicon 'src/_assets/favicon.svg' %}
   {% if keywords %} <meta name="keywords" content="{{ keywords | join(',') }}" />{% endif %}
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description | default(site.description) }}" />
+  <meta property="og:type" content="{{ openGraph.type | default('website') }}" />
+  <meta property="og:url" content="{{ site.url + page.url }}" />
+  <meta property="og:image" content="{{ openGraph.image | default(site.url + '/assets/images/social-preview/default.png') }}" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title + ' - Pandu Supriyono' | default(site.name)}}">
+  <meta name="twitter:description" content="{{ description | default(site.description) }}">
+  <meta property="twitter:image" content="{{ openGraph.image | default(site.url + '/assets/images/social-preview/default.png') }}" />
   <style>
     @font-face {
       font-family: "PP Neue Montreal";
