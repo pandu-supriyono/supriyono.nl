@@ -59,6 +59,10 @@
   align-self: flex-end;
 }
 
+.align-self\:center {
+  align-self: center;
+}
+
 .font-size\:sm {
   font-size: var(--font-size-sm);
 }
@@ -67,8 +71,8 @@
   font-size: var(--font-size-base);
 }
 
-.font-size\:mg {
-  font-size: var(--font-size-mg);
+.font-size\:md {
+  font-size: var(--font-size-md);
 }
 
 .font-size\:lg {
@@ -77,11 +81,13 @@
 
 .font-size\:xl {
   font-size: var(--font-size-xl);
+  line-height: 1.1;
 }
 
 
 .font-size\:xxl {
   font-size: var(--font-size-xxl);
+  line-height: 1.1;
 }
 
 .font-size\:xxxl {
@@ -94,6 +100,15 @@
 
 .text-decoration\:none {
   text-decoration: none;
+}
+
+.splitter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.splitter[data-direction="vertical"] {
+  flex-direction: column;
 }
 
 .splitter-y {

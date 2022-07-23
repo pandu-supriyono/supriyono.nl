@@ -15,6 +15,10 @@ const { sassPlugin } = require("esbuild-sass-plugin");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 const postcssPresetEnv = require("postcss-preset-env");
+const chromium = require("chrome-aws-lambda");
+const fs = require("fs");
+const path = require("path");
+const isWsl = require("is-wsl");
 
 dotenv.config();
 
@@ -68,7 +72,9 @@ module.exports = (eleventyConfig) => {
 
   nunjucksFilters(eleventyConfig);
 
-  eleventyConfig.on("eleventy.before", compileEsbuild);
+  eleventyConfig.on("eleventy.before", compileEsBuild);
+
+  eleventyConfig.on("eleventy.after", generateSocialPreview);
 
   eleventyConfig.addTransform("emojis", (content, outputPath) => {
     return outputPath.endsWith(".html") ? wrapEmojis(content) : content;
@@ -152,7 +158,7 @@ async function imageShortcode(src, alt, sizes, options = {}) {
   });
 }
 
-function compileEsbuild() {
+function compileEsBuild() {
   return esbuild.build({
     entryPoints: {
       app: "./src/_assets/ts/index.ts",
@@ -183,4 +189,39 @@ function compileEsbuild() {
       });
     }, {}),
   });
+}
+
+async function generateSocialPreview() {
+  const browser = await chromium.puppeteer.launch({
+    args: chromium.args,
+    executablePath: isWsl ? 'google-chrome' : await chromium.executablePath,
+    headless: isWsl ? true : chromium.headless,
+  });
+  
+  const page = await browser.newPage();
+
+  const html = fs.readFileSync(path.resolve(__dirname, "./social-preview/default.html")).toString();
+
+  await page.setContent(html, {
+    waitUntil: ["networkidle0"],
+  });
+
+  await page.evaluateHandle("document.fonts.ready");
+
+  await page.setViewport({
+    width: 600,
+    height: 315,
+    deviceScaleFactor: 2,
+  });
+
+  const outDir = path.resolve(__dirname, "dist", "assets", "images", "social-preview");
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
+
+  await page.screenshot({
+    path: `${outDir}/default.png`,
+    type: "png",
+    clip: { x: 0, y: 0, width: 600, height: 315 },
+  });
+
+  await browser.close();
 }
