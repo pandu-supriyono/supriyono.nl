@@ -12,3 +12,9 @@
     color: var(--background-color);
   }
 }
+
+.pill[data-color="inverted"] {
+  border: 2px solid var(--background-color);
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
