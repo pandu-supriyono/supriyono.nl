@@ -30,7 +30,7 @@ layout: _full-width.njk
               </h2>
             </a>
             <div class="font-size:sm">Posted on {{ post.date | date('d MMMM yyyy') }}</div>
-            <div class="wrap">
+            <div class="posts-tag-list wrap">
               {% for tag in post.data.tags %}
                 <a class="pill | font-size:sm" href="/blog/tags/{{ tag | slugify }}">{{tag}}</a>
               {% endfor %}
