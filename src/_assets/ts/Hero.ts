@@ -1,10 +1,10 @@
 import gsap from 'gsap'
 
-export default class PortraitReveal {
+export default class Hero {
   private image: HTMLImageElement
 
-  constructor (private button: HTMLElement, private reveal: HTMLElement) {
-    if (!button || !reveal) return
+  constructor (private hero: HTMLElement, private button: HTMLElement, private reveal: HTMLElement) {
+    if (!hero || !button || !reveal) return
 
     this.image = reveal.querySelector('img')
 
@@ -23,6 +23,7 @@ export default class PortraitReveal {
     this.button.addEventListener('mouseenter', this.showImage.bind(this))
     this.button.addEventListener('mouseleave', this.hideImage.bind(this))
     this.button.addEventListener('mousemove', this.positionElement.bind(this))
+    this.hero.addEventListener('mouseenter', this.unsetLazyLoad.bind(this))
   }
 
   private reset () {
@@ -30,6 +31,10 @@ export default class PortraitReveal {
     this.image.style.removeProperty('transform')
     this.reveal.style.removeProperty('display')
     this.reveal.style.removeProperty('visibility')
+  }
+
+  private unsetLazyLoad () {
+    this.image.removeAttribute('loading')
   }
 
   private getMousePos (e: MouseEvent) {
