@@ -22,7 +22,7 @@ layout: _full-width.njk
     </div>
     <div>
       <ul class="posts-post-list | unstyled-list | flow">
-        {% for post in collections[tag | default("posts")] %}
+        {% for post in collections[tag | default("posts")] | reverse %}
           <li class="post-post-list__item | flow">
             <a href="{{ post.url }}">
               <h2 class="post-post-list__item-heading">

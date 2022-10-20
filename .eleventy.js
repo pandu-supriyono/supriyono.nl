@@ -74,7 +74,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.on("eleventy.before", compileEsBuild);
 
-  eleventyConfig.on("eleventy.after", generateSocialPreview);
+  // eleventyConfig.on("eleventy.after", generateSocialPreview);
 
   eleventyConfig.addTransform("emojis", (content, outputPath) => {
     return outputPath.endsWith(".html") ? wrapEmojis(content) : content;
@@ -83,7 +83,6 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi
       .getFilteredByGlob("./src/_posts/*.md")
-      .sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addCollection("tagList", (collectionApi) => {
