@@ -74,8 +74,6 @@
   }
 
   & p {
-    z-index: 2;
-    position: relative;
     margin-top: 0;
     font-size: inherit;
   }
@@ -108,7 +106,6 @@
   margin-top: 1rem;
   height: auto;
   width: 100%;
-  z-index: 3;
 
   & img {
     width: 100%;
