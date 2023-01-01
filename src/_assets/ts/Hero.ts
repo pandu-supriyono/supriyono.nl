@@ -1,7 +1,6 @@
-import gsap from 'gsap'
-
 export default class Hero {
   private image: HTMLImageElement
+  private imageRevealTimeout: ReturnType<typeof setTimeout>
 
   constructor (private hero: HTMLElement, private button: HTMLElement, private reveal: HTMLElement) {
     if (!hero || !button || !reveal) return
@@ -77,37 +76,21 @@ export default class Hero {
   }
 
   private showImage () {
-    gsap.killTweensOf(this.image)
+    if (this.imageRevealTimeout != null) {
+      clearTimeout(this.imageRevealTimeout)
+    }
+
     this.reveal.style.display = 'block'
     this.reveal.style.visibility = 'visible'
-
-    gsap.fromTo(
-      this.image,
-      {
-        x: '-100%',
-        y: '-100%'
-      },
-      {
-        x: '0%',
-        y: '0%',
-        duration: 0.3,
-        ease: 'expo'
-      }
-    )
+    this.image.style.animationName = 'slidein'
   }
 
   private hideImage () {
-    gsap.to(
-      this.image,
-      {
-        x: '100%',
-        y: '100%',
-        duration: 0.3,
-        ease: 'expo'
-      }
-    ).then(() => {
+    this.image.style.animationName = 'slideout'
+
+    this.imageRevealTimeout = setTimeout(() => {
       this.reveal.style.display = 'none'
       this.reveal.style.visibility = 'hidden'
-    })
+    }, 300)
   }
 }
