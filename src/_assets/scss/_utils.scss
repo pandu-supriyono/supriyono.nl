@@ -21,7 +21,7 @@
   list-style: none;
 }
 
-.flow > *:first-child {
+.flow > * {
   align-self: flex-end;
 }
 
@@ -29,8 +29,8 @@
   margin-top: var(--flow-y-space, 1rem);
 }
 
-.flow-x > * + * {
-  margin-left: var(--flow-x-space, 1rem);
+.flow-x > *:not(:last-child) {
+  margin-right: var(--flow-x-space, 1rem);
 }
 
 .invert-colours {
