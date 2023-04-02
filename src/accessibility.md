@@ -4,25 +4,25 @@ layout: site-meta.njk
 lead: true
 ---
 
-I'm a firm believer in the open, accessible and inclusive web. I do my best to contribute to this web in my work.
+It is important that the web is accessible to everyone. In this page I document
+what I do to make sure this website is accessible.
 
-Supriyono.nl is designed to be an accessible website. It is designed and tested so that it:
+This website is designed to be usable according to the [Web Content Accessibility
+Guidelines](https://www.w3.org/TR/WCAG21/). I also try to keep this website as
+simple as possible to create a pleasant experience and to avoid complexity.
 
-- can be viewed at 300% zoom without losing the ability to view all content
-- can be used with only a keyboard
-- can be used with assistive technologies such as speech recognition software and screen readers
+However, this is not a guarantee that this website is accessible. It is not
+actively tested by a diverse group of people due to there not being enough
+budget. To improve this website's accessibility, I rely on my own
+experience, guidance from the web community and informal feedback from users.
 
-In general, I try to comply with the [Web Content Acessibility Guidelines 2.1 AA standard](https://www.w3.org/TR/WCAG21/),
-but I understand that meeting these standards does not automatically mean that my website is accessible.
+I am actively trying to improve my writing skills. This website is where I
+practice. My goal is to write so that people who have a [B1 level of English in
+the Common European Framework of Reference
+(CEFR)](https://www.coe.int/en/web/common-european-framework-reference%20languages/level-descriptions)
+can read and understand my written work. A B1 level of English is similar to a
+4.0 - 5.0 IELTS score or 42 - 72 TOEFL iBT score.
 
-I have not systematically tested this website with a diverse group of testers,
-but I am willing to make this investment when my budget allows for it. Until
-then, I rely on my own experience with web accessibility, community-developed guidance on the
-internet as well as feedback from users to improve this website's
-accessibility.
-
-I am constantly working on improving my writing skills. My goal is to write so that people who have a 
-[B1 level of English in the Common European Framework of Reference (CEFR)](https://www.coe.int/en/web/common-european-framework-reference%20languages/level-descriptions) can read and understand my written work. A B1 level of English is roughly equal to a 4.0 - 5.0 IELTS score or 42 - 72 TOEFL iBT score.
-
-The source code to this website is [publicly accessibly on GitHub](https://github.com/pandu-supriyono/supriyono.nl).
-I invite you to share your complaints and suggestions by raising an issue on GitHub or by [contacting me](mailto:mail@supriyono.nl).
+The source code to this website is also [available on
+GitHub](https://github.com/pandu-supriyono/supriyono.nl). If you find a problem
+with this website, [please let me know by mail](mailto:mail@supriyono.nl).

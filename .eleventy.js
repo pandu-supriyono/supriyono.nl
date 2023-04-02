@@ -74,7 +74,9 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.on("eleventy.before", compileEsBuild);
 
-  eleventyConfig.on("eleventy.after", generateSocialPreview);
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.on("eleventy.after", generateSocialPreview);
+  }
 
   eleventyConfig.addTransform("emojis", (content, outputPath) => {
     return outputPath.endsWith(".html") ? wrapEmojis(content) : content;
