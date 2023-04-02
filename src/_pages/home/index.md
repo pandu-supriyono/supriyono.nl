@@ -7,9 +7,9 @@ keywords:
   - utrecht
 ---
 
-Utrecht-based web developer 👨🏽‍💻 focusing on building inclusive and
+Utrecht-based web developer focusing on building inclusive and
 resillient web applications. What drives me is to work towards a (perhaps
-digital) future in which everyone counts and is empowerered in society. 
+digital) future in which everyone counts and is empowerered in society.
 
 Currently web/app developer at [Unc Inc](https://www.uncinc.nl/), building
 digital services for social organizations. Recently, I finished a
