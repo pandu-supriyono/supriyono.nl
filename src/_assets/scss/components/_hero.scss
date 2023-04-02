@@ -6,6 +6,8 @@
   @include mq($from: tablet) {
     border-bottom: none;
     padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -89,12 +91,8 @@
   column-gap: 0.5rem;
 
   @include mq($from: tablet) {
-    margin-top: 6rem;
+    margin-top: auto;
     justify-content: center;
-  }
-
-  @include mq($from: desktop) {
-    margin-top: 8rem;
   }
 }
 
