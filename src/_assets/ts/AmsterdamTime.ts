@@ -1,4 +1,4 @@
-export default class UtrechtTime {
+export default class AmsterdamTime {
   constructor (private element: HTMLElement) {
     if (!element) return
 
@@ -7,7 +7,7 @@ export default class UtrechtTime {
 
   private initialize () {
     setInterval(() => {
-      this.element.innerHTML = 'Utrecht, NL ' + this.getCurrentTime()
+      this.element.innerHTML = 'Amsterdam, NL ' + this.getCurrentTime()
     }, 1000)
   }
 
