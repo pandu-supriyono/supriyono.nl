@@ -92,6 +92,7 @@
 
   @include mq($from: tablet) {
     margin-top: auto;
+    margin-bottom: auto;
     justify-content: center;
   }
 }
