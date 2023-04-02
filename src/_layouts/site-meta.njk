@@ -2,7 +2,7 @@
 layout: _full-width.njk
 ---
 
-<div class="page | prose {% if lead === true %} prose--lead {% endif %} flow">
+<div class="page | prose {% if lead === true %} prose--lead {% endif %} flow" {% if customLang %} lang="{{ customLang }}" {% endif %}>
   <h1>{{ title }}</h1>
   {{ content | safe }}
 </div>
