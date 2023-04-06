@@ -1,6 +1,5 @@
-.posts .sidebar {
-  --sidebar-target-width: 40rem;
-  --sidebar-content-min-width: 40%;
+.page.posts .sidebar + .sidebar {
+  margin-top: 4rem;
 }
 
 .posts-content {
@@ -27,3 +26,5 @@
 .post-post-list__item-description {
   --flow-y-space: 1.25rem;
 }
+
+

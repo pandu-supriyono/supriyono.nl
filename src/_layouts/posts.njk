@@ -3,22 +3,23 @@ layout: _full-width.njk
 ---
 
 <div class="page posts">
-  <div class="sidebar" data-direction="rtl">
-    <div class="flow">
-      <div class="posts-content | prose flow">
-        <h1>{{ title }}</h1>
-        {{ content | safe }}
-      </div>
-      <div class="posts-content | flow">
-        <h2 class="font-size:base">Read posts about:</h2>
-        <ul class="posts-tag-list unstyled-list | wrap">
-          {% for tag in collections.tagList %}
-            <li>
-              <a class="pill | font-size:sm" href="/blog/tags/{{ tag | slugify }}">{{ tag }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+  <div class="sidebar">
+    <div></div>
+    <div>
+      <h1 class="posts-title">{{ title }}</h1>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="posts-content | flow">
+      <h2 class="font-size:base">Read posts about:</h2>
+      <ul class="posts-tag-list unstyled-list | wrap">
+        {% for tag in collections.tagList %}
+          <li>
+            <a class="pill | font-size:sm" href="/blog/tags/{{ tag | slugify }}">{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
     <div>
       <ul class="posts-post-list | unstyled-list | flow">
@@ -43,5 +44,4 @@ layout: _full-width.njk
       </ul>
     </div>
   </div>
-
 </div>
