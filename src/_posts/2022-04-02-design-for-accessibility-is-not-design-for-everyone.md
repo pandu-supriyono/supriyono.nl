@@ -4,7 +4,7 @@ date: 2022-04-02
 tags:
   - Inclusion
   - Accessibility
-description: 'As accessibility professionals we often feel that we have to get (corporate) buy-in by saying that "accessibility is not only for disabled people, but for everyone. I think this does a disservice to those most dependent on accessibility work.'
+description: 'As accessibility professionals we often feel that we have to get (corporate) buy-in by saying that "accessibility is not only for disabled people, but for everyone". I think this does a disservice to those most dependent on accessibility work.'
 ---
 
 ## The curb cut effect
