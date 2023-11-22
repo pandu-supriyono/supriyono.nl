@@ -13,7 +13,6 @@
   position: absolute;
   transform: translateY(-100%);
   left: 0;
-  transition: transform .75s ease;
   z-index: 100;
   padding: 0.5rem 0;
 
@@ -21,4 +20,8 @@
     transform: translateY(0%);
     outline: none;
   }
+}
+
+.body--dark .skip-link {
+  color: var(--background-color);
 }
