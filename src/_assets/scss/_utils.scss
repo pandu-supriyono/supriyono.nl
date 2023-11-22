@@ -40,6 +40,11 @@
   a {
     color: var(--background-color);
   }
+
+  a:focus,
+  button:focus {
+    --focus-color: var(--background-color);
+  }
 }
 
 .wrap {

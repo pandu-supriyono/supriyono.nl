@@ -7,7 +7,8 @@
   border: 2px solid var(--text-color);
   display: inline-block;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var(--text-color);
     color: var(--background-color);
   }

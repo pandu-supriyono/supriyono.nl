@@ -24,8 +24,9 @@ a {
 
 a:focus,
 button:focus {
-  outline: 4px dashed var(--focus-color);
-  outline-offset: 2px;
+  outline: 3px solid var(--focus-color);
+  outline-offset: 5px;
+  transition: outline .1s ease-out;
 }
 
 main {
