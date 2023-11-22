@@ -14,6 +14,10 @@
 .post-post-list__item {
   --flow-y-space: 3rem;
 
+  & > a {
+    display: inline-block;
+  }
+
   & > * {
     --flow-y-space: 0.5rem;
   }
