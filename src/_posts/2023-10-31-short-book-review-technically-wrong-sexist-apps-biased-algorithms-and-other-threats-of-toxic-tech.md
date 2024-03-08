@@ -1,6 +1,6 @@
 ---
 title: 'Short book review: Technically Wrong: Sexist Apps, Biased Algorithms, and Other Threats of Toxic Tech'
-date: 2022-04-02
+date: 2023-10-31
 tags:
   - Inclusion
   - Book review
